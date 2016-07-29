@@ -1,14 +1,14 @@
 #coding:utf-8
 import pygame
 import sys
-class Ball:
+class Ball():
     image = pygame.image.load(r"C:\Users\guoyanwen\Pictures\Camera Roll\ball1.png")
     def __init__(self):
-        self.boundary = Ball.image.get_rect()
-        self.speed_x , self.speed_y = 2,2
+       self.boundary = Ball.image.get_rect()
+       self.speed_x , self.speed_y = 2,2
     def move(self):
         self.boundary = self.boundary.move(self.speed_x,self.speed_y)
-        if self.boundary.left < 0 or self.boundary.right > SCREEN_WEIGHT:
+        if self.boundary.left < 0 or self.boundary.right > SCREEN__WEIGHT:
             self.speed_x *= -1
         if self.boundary.top < 0 or self.boundary.bottom > SCREEN_HEIGHT:
             self.speed_y *= -1
@@ -32,11 +32,11 @@ class Ballgame:
                 ball.draw()
             pygame.display.flip()
             clock.tick(60)
-if __name__ == 'main':
+if __name__ == '__main__':
     pygame.init()
-    SCREEN_SIZE = 1000,500
-    SCREEN_WEIGHT,SCREEN_HEIGHT = SCREEN_SIZE
+    SCREEN__SIZE =1000,200
+    SCREEN__WEIGHT,SCREEN_HEIGHT = SCREEN__SIZE
     BLACK = 0,0,0
-    clock = pygame.time.CLock()
-    SCREEN = pygame.display.set_mode(SCREEN_SIZE)
+    clock = pygame.time.Clock()
+    SCREEN = pygame.display.set_mode(SCREEN__SIZE)
     Ballgame().run()
